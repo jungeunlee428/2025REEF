@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
+
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'Suit', sans-serif;
+  color: #e0e0e0;
+  background-color: #000;
+  scroll-behavior: smooth;
+}
+
+.panel {
+  position: relative;
+  min-height: 100vh;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3rem;
+  border-radius: 12px;
+  backdrop-filter: blur(3px);
+}
+
+h1, h2, h3 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #dcdcdc;
+}
+
+/* Fade-in animation */
+.panel {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.panel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  background: #000;
+  color: #888;
+}
+
+
+section, header, footer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+p {
+  max-width: 700px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #b5b5b5;
+}
+
+.intro {
+  background: #000;
+  color: #e0e0e0;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.intro-video {
+  width: 720px;
+  height: 480px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.intro-top-text {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.intro-bottom-text {
+  max-width: 800px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #cfcfcf;
+}
+
+.question {
+  background-color: #111;
+  color: #fafafa;
+}
+
+.earth {
+  background: linear-gradient(180deg, #002, #001);
+}
+
+.collapse {
+  background-color: #0e0e0e;
+}
+
+.despair {
+  background: #070707;
+}
+
+.hope {
+  background: #101820;
+}
+
+.about {
+  background: #002b36;
+  color: #e0f7fa;
+}
+
+.kit {
+  background: #0a0a0a;
+}
+
+.end {
+  background: #000;
+  color: #f0f0f0;
+}
+
+footer {
+  padding: 2rem;
+  background: #010101;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+/* Simple fade-in animation when scrolling */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 이미지 스타일 */
+img {
+  max-width: 90%;
+  height: auto;
+  margin-top: 2rem;
+  border-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+/* 이미지 크기 타입 */
+.full-img {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.half-img {
+  width: 60%;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 화면 가득 채우기 */
+  z-index: -2; /* 텍스트 뒤로 보내기 */
+  opacity: 0.6; /* 어두운 톤으로 조정 */
+}
