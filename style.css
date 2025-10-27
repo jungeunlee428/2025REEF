@@ -1,66 +1,170 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
 
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-display: swap;
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Oswald:wght@700&display=swap');
+
+
+:root {
+    --dark-color: #121212; 
+    --light-color: #FFFFFF; 
+    --highlight-color: #FF6600;
+    --font-primary: 'Arimo', sans-serif;
+    --font-display: 'Oswald', sans-serif;
 }
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraLight.woff2') format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Suit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
-  font-weight: 900;
-  font-display: swap;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Suit', sans-serif;
-  color: #e0e0e0;
-  background-color: #000;
-  scroll-behavior: smooth;
+    font-family: var(--font-primary);
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+
+.full-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-bg {
+    background-color: var(--dark-color);
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* 타이포그래피 스타일 */
+.main-title {
+    font-family: var(--font-display);
+    font-size: 5vw;
+    font-weight: 700;
+    color: var(--light-color);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    margin-top: 10px;
+}
+
+.section-title, .section-question {
+    font-family: var(--font-display);
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.large-text {
+    font-size: 2vw;
+    color: var(--highlight-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.small-text {
+    font-size: 1.1vw;
+    max-width: 600px;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+}
+
+/* 섹션별 레이아웃 */
+.content-box {
+    max-width: 800px;
+}
+
+
+.data-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.data-item {
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid var(--highlight-color);
+    margin: 0 10px;
+}
+
+.data-item h3 {
+    font-size: 2.5vw;
+    font-family: var(--font-display);
+    margin-bottom: 5px;
+}
+
+
+.image-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.overlay-text h1 {
+    font-size: 4vw;
+    margin-top: 10px;
+}
+
+
+.image-section {
+    align-items: center;
+}
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.image-container {
+    width: 45%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.image-info {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    font-size: 0.8vw;
+    line-height: 1.4;
+    color: var(--highlight-color);
 }
 
 .panel {
@@ -75,214 +179,218 @@ body {
   text-align: center;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.45);
-  padding: 3rem;
-  border-radius: 12px;
-  backdrop-filter: blur(3px);
+/* 섹션 8: 로고 */
+.main-logo-text {
+    font-family: var(--font-display);
+    font-size: 10vw;
+    color: var(--highlight-color);
+    line-height: 1;
+}
+.definition-text {
+    max-width: 700px;
+    font-size: 1.2vw;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-h1, h2, h3 {
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+/* 섹션 9: 슬로건 */
+.main-slogan {
+    font-size: 4.5vw;
+    color: var(--highlight-color);
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #dcdcdc;
+/* RE Kit 구성 요소 섹션 */
+.content-image-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px;
+    text-align: left;
 }
 
-/* Fade-in animation */
-.panel {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+.content-image-layout.reverse-layout {
+    grid-template-columns: 1fr 1fr;
+}
+.content-image-layout.reverse-layout .text-content {
+    order: 2;
+}
+.content-image-layout.reverse-layout .image-placeholder {
+    order: 1;
 }
 
-.panel.visible {
-  opacity: 1;
-  transform: translateY(0);
+.content-image-layout h3 {
+    font-family: var(--font-display);
+    font-size: 3vw;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+.content-image-layout p {
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  background: #000;
-  color: #888;
+.image-placeholder {
+    width: 100%;
+    height: 70vh;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* ---------------------------------- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    border: 0px solid var(--highlight-color);
 }
 
-
-section, header, footer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem;
-  text-align: center;
+/* CTA 버튼 */
+.cta-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--highlight-color);
+    color: var(--dark-color);
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
 }
 
-h1, h2 {
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
+.cta-button:hover {
+    background-color: #FF8533;
 }
 
-h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
+/* 스크롤 애니메이션 스타일 (기본 숨김) */
+.animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-p {
-  max-width: 700px;
-  line-height: 1.6;
-  font-weight: 300;
-  color: #b5b5b5;
+.animated-element.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.intro {
-  background: #000;
-  color: #e0e0e0;
-  padding: 6rem 2rem;
-  text-align: center;
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1vw;
+    color: var(--highlight-color);
+    animation: bounce 1.5s infinite;
 }
 
-.intro-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.image-only {
+    /* 기존 full-screen 속성 상속 (height: 100vh 등) */
+    background-size: cover; /* 이미지가 섹션을 완전히 덮도록 설정 */
+    background-position: center; /* 이미지를 중앙에 배치 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+
+    /* 텍스트 내용이나 오버레이가 없음을 보장 */
+    display: block; /* Flexbox 대신 단순 블록으로 설정 */
+
+    /* 혹시 모를 내부 콘텐츠가 있다면 숨기거나 투명하게 처리 */
+    color: transparent;
+    text-indent: -9999px;
 }
 
-.intro-video {
-  width: 720px;
-  height: 480px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
-.intro-top-text {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+/* 반응형 디자인 (선택적) */
+@media (max-width: 768px) {
+    .full-screen {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .main-title {
+        font-size: 10vw;
+    }
+    .subtitle {
+        font-size: 3vw;
+    }
+    .section-title, .section-question {
+        font-size: 7vw;
+    }
+    .large-text {
+        font-size: 4vw;
+    }
+    .small-text {
+        font-size: 3vw;
+    }
+    .data-grid {
+        flex-direction: column;
+    }
+    .data-item {
+        margin: 10px 0;
+    }
+    .image-gallery {
+        flex-direction: column;
+    }
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .content-image-layout {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    .content-image-layout.reverse-layout .text-content,
+    .content-image-layout.reverse-layout .image-placeholder {
+        order: initial;
+    }
+    .image-placeholder {
+        height: 50vh;
+    }
 }
 
-.intro-bottom-text {
-  max-width: 800px;
-  line-height: 1.6;
-  font-weight: 300;
-  color: #cfcfcf;
+.video-section {
+    /* 기존 스타일 유지 */
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* 💡 해결책 1: 다음 섹션으로의 스크롤링을 방해하지 않도록 포인터 이벤트를 비활성화합니다. */
+    /* 이렇게 하면 사용자가 영상 위를 클릭하거나 스크롤해도 이벤트가 영상에 포착되지 않고 뒤의 요소로 전달됩니다. */
+    pointer-events: none;
 }
 
-.question {
-  background-color: #111;
-  color: #fafafa;
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    pointer-events: none;
 }
 
-.earth {
-  background: linear-gradient(180deg, #002, #001);
-}
+.responsive-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 
-.collapse {
-  background-color: #0e0e0e;
-}
-
-.despair {
-  background: #070707;
-}
-
-.hope {
-  background: #101820;
-}
-
-.about {
-  background: #002b36;
-  color: #e0f7fa;
-}
-
-.kit {
-  background: #0a0a0a;
-}
-
-.end {
-  background: #000;
-  color: #f0f0f0;
-}
-
-footer {
-  padding: 2rem;
-  background: #010101;
-  font-size: 0.8rem;
-  color: #888;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 0.5rem 0;
-  font-weight: 400;
-}
-
-/* Simple fade-in animation when scrolling */
-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 이미지 스타일 */
-img {
-  max-width: 90%;
-  height: auto;
-  margin-top: 2rem;
-  border-radius: 8px;
-  opacity: 0.8;
-  transition: opacity 0.5s ease-in-out;
-}
-
-img:hover {
-  opacity: 1;
-}
-
-/* 이미지 크기 타입 */
-.full-img {
-  width: 100%;
-  max-width: 1200px;
-}
-
-.half-img {
-  width: 60%;
-}
-
-.bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 화면 가득 채우기 */
-  z-index: -2; /* 텍스트 뒤로 보내기 */
-  opacity: 0.6; /* 어두운 톤으로 조정 */
+    pointer-events: none;
 }
