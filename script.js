@@ -1,31 +1,46 @@
-const panels = document.querySelectorAll('.panel');
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.animated-element');
+    const fullScreenSections = document.querySelectorAll('.full-screen');
+    const checkVisibility = () => {
+        animatedElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            // 요소의 10% 이상이 뷰포트에 들어왔을 때 'visible' 클래스 추가
+            if (rect.top < window.innerHeight - (rect.height * 0.1)) {
+                element.classList.add('visible');
+            }
+        });
+    };
 
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
+    checkVisibility();
 
-panels.forEach(panel => {
-  appearOnScroll.observe(panel);
-});
 
-const video = document.getElementById('bgVideo');
-const btn = document.getElementById('togglePlay');
+    window.addEventListener('scroll', checkVisibility);
 
-btn.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-    btn.textContent = '⏸ Pause';
-  } else {
-    video.pause();
-    btn.textContent = '▶ Play';
-  }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    let currentSection = 0;
+    window.addEventListener('wheel', function(e) {
+        e.preventDefault();
+
+        const delta = e.deltaY;
+        const totalSections = fullScreenSections.length;
+
+        if (delta > 0 && currentSection < totalSections - 1) {
+            currentSection++;
+        } else if (delta < 0 && currentSection > 0) {
+            currentSection--;
+        }
+
+        fullScreenSections[currentSection].scrollIntoView({
+            behavior: 'smooth'
+        });
+    }, { passive: false });
 });
