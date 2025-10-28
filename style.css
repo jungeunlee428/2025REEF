@@ -1,7 +1,5 @@
-/* 폰트 임포트 (예시, 원하시는 폰트로 대체하세요) */
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Oswald:wght@700&display=swap');
 
-/* 기본 설정 */
 :root {
     --dark-color: #121212; /* 거의 검정에 가까운 어두운 배경 */
     --light-color: #FFFFFF; /* 흰색 텍스트 */
@@ -52,7 +50,6 @@ body {
     text-align: left;
 }
 
-/* 타이포그래피 스타일 */
 .main-title {
     font-family: var(--font-display);
     font-size: 5vw;
@@ -95,12 +92,12 @@ body {
     color: var(--highlight-color);
 }
 
-/* 섹션별 레이아웃 */
+
 .content-box {
     max-width: 800px;
 }
 
-/* 섹션 3: 데이터 그리드 */
+
 .data-grid {
     display: flex;
     justify-content: space-between;
@@ -121,7 +118,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* 섹션 4: 배경 이미지 + 오버레이 텍스트 */
 .image-bg {
     background-size: cover;
     background-position: center;
@@ -137,7 +133,6 @@ body {
     margin-top: 10px;
 }
 
-/* 섹션 5: 이미지 갤러리 */
 .image-section {
     align-items: center;
 }
@@ -179,7 +174,6 @@ body {
   text-align: center;
 }
 
-/* 섹션 8: 로고 */
 .main-logo-text {
     font-family: var(--font-display);
     font-size: 10vw;
@@ -193,13 +187,11 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* 섹션 9: 슬로건 */
 .main-slogan {
     font-size: 4.5vw;
     color: var(--highlight-color);
 }
 
-/* RE Kit 구성 요소 섹션 */
 .content-image-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -286,15 +278,14 @@ body {
 }
 
 .image-only {
-    /* 기존 full-screen 속성 상속 (height: 100vh 등) */
+
     background-size: cover; /* 이미지가 섹션을 완전히 덮도록 설정 */
     background-position: center; /* 이미지를 중앙에 배치 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
 
-    /* 텍스트 내용이나 오버레이가 없음을 보장 */
+
     display: block; /* Flexbox 대신 단순 블록으로 설정 */
 
-    /* 혹시 모를 내부 콘텐츠가 있다면 숨기거나 투명하게 처리 */
     color: transparent;
     text-indent: -9999px;
 }
@@ -311,7 +302,6 @@ body {
     }
 }
 
-/* 반응형 디자인 (선택적) */
 @media (max-width: 768px) {
     .full-screen {
         height: auto;
@@ -365,9 +355,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    /* 💡 해결책 1: 다음 섹션으로의 스크롤링을 방해하지 않도록 포인터 이벤트를 비활성화합니다. */
-    /* 이렇게 하면 사용자가 영상 위를 클릭하거나 스크롤해도 이벤트가 영상에 포착되지 않고 뒤의 요소로 전달됩니다. */
-    pointer-events: none;
 }
 
 .video-container {
@@ -377,7 +364,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* 💡 해결책 2: 영상 컨테이너 자체의 이벤트도 비활성화합니다. */
+
     pointer-events: none;
 }
 
@@ -392,6 +379,5 @@ body {
     transform: translate(-50%, -50%);
     z-index: 1;
 
-    /* 💡 해결책 3: iframe 자체의 이벤트도 비활성화하여 스크롤 충돌을 완전히 제거합니다. */
     pointer-events: none;
 }
