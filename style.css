@@ -1,0 +1,441 @@
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+
+:root {
+    --dark-color: #121212; /* 거의 검정에 가까운 어두운 배경 */
+    --light-color: #FFFFFF; /* 흰색 텍스트 */
+    --highlight-color: #FF6600; /* 강렬한 주황색 (RE Kit 디자인 반영) */
+    --font-primary: 'Suit', sans-serif; /* 🌟 Suit 폰트 적용 */
+    --font-display: 'Suit', sans-serif; /* 🌟 Suit 폰트 적용 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+
+.full-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* 내부 애니메이션 준비 */
+}
+
+.dark-bg {
+    background-color: var(--dark-color);
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* 타이포그래피 스타일 */
+.main-title {
+    font-family: var(--font-display);
+    font-size: 5vw;
+    font-weight: 700;
+    color: var(--light-color);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    margin-top: 10px;
+}
+
+.section-title, .section-question {
+    font-family: var(--font-display);
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.large-text {
+    font-size: 2vw;
+    color: var(--highlight-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.small-text {
+    font-size: 1.1vw;
+    max-width: 600px;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+}
+
+/* 섹션별 레이아웃 */
+.content-box {
+    max-width: 800px;
+}
+
+/* 데이터 그리드 (사용하지 않으므로 삭제해도 되지만, 유지) */
+.data-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.data-item {
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid var(--highlight-color);
+    margin: 0 10px;
+}
+
+.data-item h3 {
+    font-size: 2.5vw;
+    font-family: var(--font-display);
+    margin-bottom: 5px;
+}
+
+/* 이미지 + 오버레이 텍스트 (사용하지 않으므로 삭제해도 되지만, 유지) */
+.image-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.overlay-text h1 {
+    font-size: 4vw;
+    margin-top: 10px;
+}
+
+/* 섹션 5: 이미지 갤러리 (사용하지 않으므로 삭제해도 되지만, 유지) */
+.image-section {
+    align-items: center;
+}
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.image-container {
+    width: 45%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.image-info {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    font-size: 0.8vw;
+    line-height: 1.4;
+    color: var(--highlight-color);
+}
+
+
+/* 섹션 8: 로고 */
+.main-logo-text {
+    font-family: var(--font-display);
+    font-size: 10vw;
+    color: var(--highlight-color);
+    line-height: 1;
+}
+.definition-text {
+    max-width: 700px;
+    font-size: 1.2vw;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 섹션 9: 슬로건 */
+.main-slogan {
+    font-size: 4.5vw;
+    color: var(--highlight-color);
+}
+
+/* RE Kit 구성 요소 섹션 */
+.content-image-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px;
+    text-align: left;
+}
+
+.content-image-layout.reverse-layout {
+    grid-template-columns: 1fr 1fr;
+}
+.content-image-layout.reverse-layout .text-content {
+    order: 2;
+}
+.content-image-layout.reverse-layout .image-placeholder {
+    order: 1;
+}
+
+.content-image-layout h3 {
+    font-family: var(--font-display);
+    font-size: 3vw;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+.content-image-layout p {
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 이미지 전용 섹션 */
+.image-only {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    color: transparent;
+    text-indent: -9999px;
+}
+
+/* 이미지 플레이스홀더 (RE Kit 이미지) */
+.image-placeholder {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    border: 0px solid var(--highlight-color); /* 불필요한 테두리 제거 */
+}
+
+/* CTA 버튼 */
+.cta-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--highlight-color);
+    color: var(--dark-color);
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF8533;
+}
+
+/* ------------------------------------- */
+/* 4. 애니메이션 및 비디오 섹션 */
+/* ------------------------------------- */
+
+/* 스크롤 애니메이션 스타일 */
+.animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1vw;
+    color: var(--highlight-color);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 비메오 영상 섹션 스타일 */
+.video-section {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: auto;
+}
+
+html {
+    scroll-snap-type: y mandatory; /* Y축으로, 반드시 섹션에 스내핑 */
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
+}
+
+.full-screen {
+    scroll-snap-align: start; /* 섹션의 시작점(top)에 스내핑 */
+}
+
+
+@media (max-width: 768px) {
+    .full-screen {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .main-title {
+        font-size: 10vw;
+    }
+    .subtitle {
+        font-size: 3vw;
+    }
+    .section-title, .section-question {
+        font-size: 7vw;
+    }
+    .large-text {
+        font-size: 4vw;
+    }
+    .small-text {
+        font-size: 3vw;
+    }
+    .data-grid {
+        flex-direction: column;
+    }
+    .data-item {
+        margin: 10px 0;
+    }
+    .image-gallery {
+        flex-direction: column;
+    }
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .content-image-layout {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    .content-image-layout.reverse-layout .text-content,
+    .content-image-layout.reverse-layout .image-placeholder {
+        order: initial;
+    }
+    .image-placeholder {
+        height: 50vh;
+    }
+}
