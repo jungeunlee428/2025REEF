@@ -1,0 +1,472 @@
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+
+:root {
+    --dark-color: #121212; /* 거의 검정에 가까운 어두운 배경 */
+    --light-color: #FFFFFF; /* 흰색 텍스트 */
+    --highlight-color: #FF6600; /* 강렬한 주황색 (RE Kit 디자인 반영) */
+    --font-primary: 'Suit', sans-serif; /* 🌟 Suit 폰트 적용 */
+    --font-display: 'Suit', sans-serif; /* 🌟 Suit 폰트 적용 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+
+.full-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* 내부 애니메이션 준비 */
+}
+
+.dark-bg {
+    background-color: var(--dark-color);
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* ------------------------------------- */
+/* 1. 영어 타이포그래피 스타일 */
+/* ------------------------------------- */
+
+.main-title {
+    font-family: var(--font-display);
+    font-size: 5vw;
+    font-weight: 700;
+    color: var(--light-color);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    margin-top: 10px;
+}
+
+.section-title, .section-question {
+    font-family: var(--font-display);
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.large-text {
+    font-size: 2vw;
+    color: var(--highlight-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.small-text {
+    font-size: 1.1vw;
+    max-width: 600px;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+}
+
+/* ------------------------------------- */
+/* 2. 한국어 타이포그래피 스타일 (추가/수정됨) */
+/* ------------------------------------- */
+
+/* 기본 한국어 폰트 및 색상 설정 */
+.subtitle-ko, .large-text-ko, .section-question-ko, .small-text-ko, .definition-text-ko, .main-slogan-ko, h3.animated-element-ko, .highlight-text-ko, .text-content-ko, .cta-button-ko {
+    font-family: var(--font-primary);
+    color: rgba(255, 255, 255, 0.9); /* 영어 텍스트보다 살짝 밝게 조정 */
+    margin-top: 10px; /* 영어 텍스트와의 간격 확보 */
+    line-height: 1.4;
+    max-width: 600px; /* 영어 small-text와 동일하게 설정 */
+}
+
+.main-title-ko {
+    font-family: var(--font-display);
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--light-color);
+    margin-top: 15px;
+}
+
+.subtitle-ko {
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+}
+
+.large-text-ko {
+    font-size: 2vw;
+    color: var(--highlight-color);
+    font-weight: 700;
+}
+
+/* h2 한국어 제목 스타일 */
+.section-title-ko, .section-question-ko {
+    font-family: var(--font-display);
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 20px;
+    color: var(--light-color);
+}
+
+.small-text-ko {
+    font-size: 1.1vw;
+    margin-top: 15px;
+}
+
+.definition-text-ko {
+    max-width: 700px;
+    font-size: 1.2vw;
+    margin-top: 30px;
+}
+
+.main-slogan-ko {
+    font-size: 4.5vw;
+    color: var(--highlight-color);
+    line-height: 1.1;
+}
+
+/* h3 한국어 제목 스타일 (섹션 10, 11-1~3) */
+h3.animated-element-ko {
+    font-family: var(--font-display);
+    font-size: 1.8vw;
+    color: var(--highlight-color); /* 영어 h3과 동일하게 설정 */
+    margin-top: 15px;
+    margin-bottom: 5px; /* 다음 문단과의 간격 줄임 */
+}
+
+/* RE Kit 상세 설명 텍스트 (p.text-content-ko) */
+.text-content-ko {
+    font-size: 1.2vw;
+}
+
+/* ------------------------------------- */
+/* 3. 섹션별 레이아웃 */
+/* ------------------------------------- */
+
+.content-box {
+    max-width: 800px;
+}
+
+/* 섹션 8: 로고 */
+.main-logo-text {
+    font-family: var(--font-display);
+    font-size: 10vw;
+    color: var(--highlight-color);
+    line-height: 1;
+}
+
+/* RE Kit 구성 요소 섹션 */
+.content-image-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px;
+    text-align: left;
+}
+
+.content-image-layout.reverse-layout {
+    grid-template-columns: 1fr 1fr;
+}
+.content-image-layout.reverse-layout .text-content {
+    order: 2;
+}
+.content-image-layout.reverse-layout .image-placeholder {
+    order: 1;
+}
+
+.content-image-layout h3 {
+    font-family: var(--font-display);
+    font-size: 3vw;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+.content-image-layout p {
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 이미지 전용 섹션 */
+.image-only {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    color: transparent;
+    text-indent: -9999px;
+}
+
+/* 이미지 플레이스홀더 (RE Kit 이미지) */
+.image-placeholder {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: var(--highlight-color);
+    border: 0px solid var(--highlight-color);
+}
+
+/* CTA 버튼 */
+.cta-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--highlight-color);
+    color: var(--dark-color);
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF8533;
+}
+
+/* CTA 버튼 한국어 스타일 */
+.cta-button-ko {
+    /* cta-button과 동일한 스타일 */
+    margin-top: 15px; /* 영어 버튼 아래에 적절한 여백 */
+    padding: 15px 40px;
+    background-color: var(--highlight-color);
+    color: var(--dark-color);
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button-ko:hover {
+    background-color: #FF8533;
+}
+
+/* ------------------------------------- */
+/* 4. 애니메이션 및 비디오 섹션 */
+/* ------------------------------------- */
+
+/* 스크롤 애니메이션 스타일 */
+/* animated-element-ko 클래스에는 별도의 스타일 대신, HTML에서 animated-element 클래스를 함께 사용하도록 처리 */
+.animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1vw;
+    color: var(--highlight-color);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 비메오 영상 섹션 스타일 */
+.video-section {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: auto;
+}
+
+html {
+    scroll-snap-type: y mandatory; /* Y축으로, 반드시 섹션에 스내핑 */
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
+}
+
+.full-screen {
+    scroll-snap-align: start; /* 섹션의 시작점(top)에 스내핑 */
+}
+
+
+/* ------------------------------------- */
+/* 5. 미디어 쿼리 (모바일 반응형) */
+/* ------------------------------------- */
+
+@media (max-width: 768px) {
+    .full-screen {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    /* 영어 텍스트 */
+    .main-title { font-size: 10vw; }
+    .subtitle { font-size: 3vw; }
+    .section-title, .section-question { font-size: 7vw; }
+    .large-text { font-size: 4vw; }
+    .small-text { font-size: 3vw; }
+
+    /* 한국어 텍스트 */
+    .main-title-ko { font-size: 10vw; }
+    .subtitle-ko { font-size: 4vw; }
+    .section-title-ko, .section-question-ko { font-size: 7vw; }
+    .large-text-ko { font-size: 4vw; }
+    .small-text-ko { font-size: 3vw; }
+    .definition-text-ko { font-size: 3.5vw; }
+    .main-slogan-ko { font-size: 8vw; }
+    .text-content-ko { font-size: 3vw; }
+    /* h3 한국어 제목 */
+    h3.animated-element-ko { font-size: 5vw; margin-top: 10px; }
+
+
+    .data-grid {
+        flex-direction: column;
+    }
+    .data-item {
+        margin: 10px 0;
+    }
+    .image-gallery {
+        flex-direction: column;
+    }
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .content-image-layout {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    .content-image-layout.reverse-layout .text-content,
+    .content-image-layout.reverse-layout .image-placeholder {
+        order: initial;
+    }
+    .image-placeholder {
+        height: 50vh;
+    }
+    .content-image-layout h3 {
+        font-size: 6vw;
+    }
+}
